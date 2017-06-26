@@ -31,8 +31,11 @@ import co.edu.uniandes.csw.artwork.tests.selenium.pages.LoginPage;
 import co.edu.uniandes.csw.artwork.tests.selenium.pages.category.CategoryCreatePage;
 import co.edu.uniandes.csw.artwork.tests.selenium.pages.category.CategoryDetailPage;
 import co.edu.uniandes.csw.artwork.tests.selenium.pages.category.CategoryEditPage;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.graphene.page.InitialPage;
@@ -45,6 +48,7 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.importer.ExplodedImporter;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
+import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -104,7 +108,7 @@ public class CategoryIT {
 
     @Test
     @InSequence(0)
-    public void login(@InitialPage LoginPage loginPage) {
+    public void login(@InitialPage LoginPage loginPage) throws IOException, UnirestException, JSONException, InterruptedException, ExecutionException {
         browser.manage().deleteAllCookies();
         loginPage.login();
     }

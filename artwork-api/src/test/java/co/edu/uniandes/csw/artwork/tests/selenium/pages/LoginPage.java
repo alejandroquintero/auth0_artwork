@@ -25,14 +25,21 @@ SOFTWARE.
 package co.edu.uniandes.csw.artwork.tests.selenium.pages;
 
 import co.edu.uniandes.csw.artwork.tests.Utils;
+import co.edu.uniandes.csw.auth.conexions.AuthenticationApi;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 import static org.jboss.arquillian.graphene.Graphene.guardAjax;
 import static org.jboss.arquillian.graphene.Graphene.waitModel;
 import org.jboss.arquillian.graphene.page.Location;
+import org.json.JSONException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Location("#/login")
 public class LoginPage {
+    
+    private static   AuthenticationApi auth;
 
     @FindBy(id = "username-input")
     private WebElement usernameInput;
@@ -43,8 +50,9 @@ public class LoginPage {
     @FindBy(id = "log-in-btn")
     private WebElement registerBtn;
 
-    public void login() {
-        login(Utils.username, Utils.password);
+    public void login() throws IOException, UnirestException, JSONException, InterruptedException, ExecutionException {
+        auth = new AuthenticationApi();
+        login(auth.getProp().getProperty("username").trim(), auth.getProp().getProperty("password").trim());
     }
 
     public void login(String username, String password) {

@@ -11,6 +11,7 @@ import co.edu.uniandes.csw.artwork.resources.ArtistResource;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,6 +42,8 @@ import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import org.json.JSONException;
 
 /**
  *
@@ -83,26 +86,28 @@ public class ArtistIT {
     }   
     
 
-public void setPostmanCollectionValues(String action) throws FileNotFoundException, IOException, ParseException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
- 
-    FileReader reader = new FileReader(CollectionPrepare.getPATH());
-    Object obj = parser.parse(reader);
-    reader.close();
-    FileWriter writer = new FileWriter(CollectionPrepare.getPATH());
-    ArtistDetailDTO artist = factory.manufacturePojo(ArtistDetailDTO.class);
-    JsonArray jsonArray=gson.toJsonTree(obj).getAsJsonObject().get("item").getAsJsonArray();
-    Integer index= CollectionPrepare.findJsonIndex(jsonArray,action);
-    JsonElement jsonElement=gson.toJsonTree(obj);
-    CollectionPrepare.setCollectionBody(jsonElement, index, artist, gson);   
-    writer.write(jsonElement.toString());
-    writer.flush();
-    writer.close();
+public void setPostmanCollectionValues(String action) throws FileNotFoundException, IOException, ParseException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, UnirestException, JSONException, InterruptedException, ExecutionException{
+    
+    System.out.println(CollectionPrepare.getPATH()); 
+    Object obj;
+       try (FileReader reader = new FileReader(CollectionPrepare.getPATH())) {
+           obj = parser.parse(reader);
+       } 
+       try (FileWriter writer = new FileWriter(CollectionPrepare.getPATH())) {
+           ArtistDetailDTO artist = factory.manufacturePojo(ArtistDetailDTO.class);
+           JsonArray jsonArray=gson.toJsonTree(obj).getAsJsonObject().get("item").getAsJsonArray();
+           Integer index= CollectionPrepare.findJsonIndex(jsonArray,action);
+           JsonElement jsonElement=gson.toJsonTree(obj);
+           CollectionPrepare.setCollectionBody(jsonElement, index, artist, gson);
+           writer.write(jsonElement.toString());
+           writer.flush();
+       }
 }
 
 
     @Test 
-    public void postman() throws FileNotFoundException, IOException, ParseException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-        
+    public void postman() throws FileNotFoundException, IOException, ParseException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, UnirestException, JSONException, InterruptedException, ExecutionException{
+      CollectionPrepare.loginCredentials(); 
       setPostmanCollectionValues("create");
       setPostmanCollectionValues("edit");
    try {              
