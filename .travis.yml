@@ -2,6 +2,6 @@ language: java
 jdk:
   - oraclejdk8
 env:
-  - AUTH0_PROPERTIES=artwork-api/src/main/java/co/edu/uniandes/csw/auth/properties/auth0.properties
+  - AUTH0_PROPERTIES=/artwork-api/src/main/java/co/edu/uniandes/csw/auth/properties/auth0.properties
 after_success:
   - mvn sonar:sonar
