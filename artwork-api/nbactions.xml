@@ -12,7 +12,7 @@
             </goals>
             <properties>
                 <netbeans.deploy>true</netbeans.deploy>
-                <skipTests>true</skipTests>
+                
             </properties>
         </action>
         <action>
