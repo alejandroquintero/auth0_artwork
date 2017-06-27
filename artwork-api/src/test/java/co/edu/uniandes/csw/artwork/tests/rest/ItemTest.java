@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.rest;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.UserDTO;
 import co.edu.uniandes.csw.artwork.entities.ItemEntity;
 import co.edu.uniandes.csw.artwork.entities.ClientEntity;
@@ -61,9 +61,7 @@ import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-/*
- * Testing URI: clients/{wishlistId: \\d+}/wishlist/
- */
+ 
 @RunWith(Arquillian.class)
 public class ItemTest {
 
@@ -122,12 +120,7 @@ public class ItemTest {
         em.createQuery("delete from ClientEntity").executeUpdate();
         oraculo.clear();
     }
-
-   /**
-     * Datos iniciales para el correcto funcionamiento de las pruebas.
-     *
-     * @generated
-     */
+ 
     public void insertData() {
         fatherClientEntity = factory.manufacturePojo(ClientEntity.class);
         fatherClientEntity.setId(1L);
@@ -142,11 +135,7 @@ public class ItemTest {
         }
     }
 
-    /**
-     * Configuración inicial de la prueba.
-     *
-     * @generated
-     */
+   
     @Before
     public void setUpTest() {
         try {
@@ -168,19 +157,7 @@ public class ItemTest {
                 .path(itemPath);
     }
 
-    /**
-     * Login para poder consultar los diferentes servicios
-     *
-     * @param username Nombre de usuario
-     * @param password Clave del usuario
-     * @return Cookie con información de la sesión del usuario
-     * @generated
-     */
-    /**
-     * Prueba para crear un Item
-     *
-     * @generated
-     */
+    
     @Test
     public void createItemTest() throws IOException {
         ItemDetailDTO item = factory.manufacturePojo(ItemDetailDTO.class);
@@ -199,11 +176,7 @@ public class ItemTest {
         Assert.assertNotNull(entity);
     }
 
-    /**
-     * Prueba para consultar un Item
-     *
-     * @generated
-     */
+    
     @Test
     public void getItemByIdTest() {
 
@@ -216,11 +189,7 @@ public class ItemTest {
         Assert.assertEquals(itemTest.getQty(), oraculo.get(0).getQty());
     }
 
-    /**
-     * Prueba para consultar la lista de Items
-     *
-     * @generated
-     */
+    
     @Test
     public void listItemTest() throws IOException {
         Response response = target
@@ -232,11 +201,7 @@ public class ItemTest {
         Assert.assertEquals(oraculo.size(), listItemTest.size());
     }
 
-    /**
-     * Prueba para actualizar un Item
-     *
-     * @generated
-     */
+     
     @Test
     public void updateItemTest() throws IOException {
         ItemDetailDTO item = new ItemDetailDTO(oraculo.get(0));
@@ -258,11 +223,7 @@ public class ItemTest {
         Assert.assertEquals(item.getQty(), itemTest.getQty());
     }
 
-    /**
-     * Prueba para eliminar un Item
-     *
-     * @generated
-     */
+    
     @Test
     public void deleteItemTest() {
         ItemDetailDTO item = new ItemDetailDTO(oraculo.get(0));
@@ -273,3 +234,4 @@ public class ItemTest {
         Assert.assertEquals(OkWithoutContent, response.getStatus());
     }
 }
+*/

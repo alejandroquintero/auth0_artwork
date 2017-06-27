@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.rest;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.UserDTO;
 import co.edu.uniandes.csw.artwork.entities.CategoryEntity;
 import co.edu.uniandes.csw.artwork.dtos.detail.CategoryDetailDTO;
@@ -60,9 +60,7 @@ import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-/*
- * Testing URI: categorys/
- */
+ 
 @RunWith(Arquillian.class)
 public class CategoryTest {
 
@@ -119,11 +117,7 @@ public class CategoryTest {
         oraculo.clear();
     }
 
-   /**
-     * Datos iniciales para el correcto funcionamiento de las pruebas.
-     *
-     * @generated
-     */
+   
     public void insertData() {
         for (int i = 0; i < 3; i++) {            
             CategoryEntity category = factory.manufacturePojo(CategoryEntity.class);
@@ -133,11 +127,7 @@ public class CategoryTest {
         }
     }
 
-    /**
-     * Configuración inicial de la prueba.
-     *
-     * @generated
-     */
+   
     @Before
     public void setUpTest() {
         try {
@@ -157,19 +147,7 @@ public class CategoryTest {
                 .path(categoryPath);
     }
 
-    /**
-     * Login para poder consultar los diferentes servicios
-     *
-     * @param username Nombre de usuario
-     * @param password Clave del usuario
-     * @return Cookie con información de la sesión del usuario
-     * @generated
-     */
-    /**
-     * Prueba para crear un Category
-     *
-     * @generated
-     */
+     
     @Test
     public void createCategoryTest() throws IOException {
         CategoryDetailDTO category = factory.manufacturePojo(CategoryDetailDTO.class);
@@ -187,11 +165,7 @@ public class CategoryTest {
         Assert.assertNotNull(entity);
     }
 
-    /**
-     * Prueba para consultar un Category
-     *
-     * @generated
-     */
+   
     @Test
     public void getCategoryByIdTest() {
 
@@ -203,11 +177,7 @@ public class CategoryTest {
         Assert.assertEquals(categoryTest.getName(), oraculo.get(0).getName());
     }
 
-    /**
-     * Prueba para consultar la lista de Categorys
-     *
-     * @generated
-     */
+    
     @Test
     public void listCategoryTest() throws IOException {
         Response response = target
@@ -219,11 +189,7 @@ public class CategoryTest {
         Assert.assertEquals(oraculo.size(), listCategoryTest.size());
     }
 
-    /**
-     * Prueba para actualizar un Category
-     *
-     * @generated
-     */
+    
     @Test
     public void updateCategoryTest() throws IOException {
         CategoryDetailDTO category = new CategoryDetailDTO(oraculo.get(0));
@@ -243,11 +209,7 @@ public class CategoryTest {
         Assert.assertEquals(category.getName(), categoryTest.getName());
     }
 
-    /**
-     * Prueba para eliminar un Category
-     *
-     * @generated
-     */
+    
     @Test
     public void deleteCategoryTest() {
         CategoryDetailDTO category = new CategoryDetailDTO(oraculo.get(0));
@@ -257,4 +219,6 @@ public class CategoryTest {
 
         Assert.assertEquals(OkWithoutContent, response.getStatus());
     }
+   
 }
+*/

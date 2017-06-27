@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.selenium;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.CategoryDTO;
 import co.edu.uniandes.csw.artwork.resources.CategoryResource;
 import co.edu.uniandes.csw.artwork.tests.selenium.pages.category.CategoryCreatePage;
@@ -145,3 +145,4 @@ public class CategoryIT {
  
 
 }
+*/

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.selenium;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.ProductDTO;
 import co.edu.uniandes.csw.artwork.resources.ProductResource;
 import co.edu.uniandes.csw.artwork.tests.selenium.pages.product.ProductCreatePage;
@@ -154,3 +154,4 @@ public class ProductIT {
     }
 
 }
+*/

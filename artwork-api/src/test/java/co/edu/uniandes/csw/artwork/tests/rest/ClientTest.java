@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.rest;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.UserDTO;
 import co.edu.uniandes.csw.artwork.entities.ClientEntity;
 import co.edu.uniandes.csw.artwork.dtos.detail.ClientDetailDTO;
@@ -60,9 +60,7 @@ import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-/*
- * Testing URI: clients/
- */
+ 
 @RunWith(Arquillian.class)
 public class ClientTest {
 
@@ -119,11 +117,7 @@ public class ClientTest {
         oraculo.clear();
     }
 
-   /**
-     * Datos iniciales para el correcto funcionamiento de las pruebas.
-     *
-     * @generated
-     */
+    
     public void insertData() {
         for (int i = 0; i < 3; i++) {            
             ClientEntity client = factory.manufacturePojo(ClientEntity.class);
@@ -133,11 +127,7 @@ public class ClientTest {
         }
     }
 
-    /**
-     * Configuración inicial de la prueba.
-     *
-     * @generated
-     */
+    
     @Before
     public void setUpTest() {
         try {
@@ -156,20 +146,7 @@ public class ClientTest {
         target = createWebTarget()
                 .path(clientPath);
     }
-
-    /**
-     * Login para poder consultar los diferentes servicios
-     *
-     * @param username Nombre de usuario
-     * @param password Clave del usuario
-     * @return Cookie con información de la sesión del usuario
-     * @generated
-     */
-    /**
-     * Prueba para crear un Client
-     *
-     * @generated
-     */
+ 
     @Test
     public void createClientTest() throws IOException {
         ClientDetailDTO client = factory.manufacturePojo(ClientDetailDTO.class);
@@ -187,11 +164,7 @@ public class ClientTest {
         Assert.assertNotNull(entity);
     }
 
-    /**
-     * Prueba para consultar un Client
-     *
-     * @generated
-     */
+    
     @Test
     public void getClientByIdTest() {
 
@@ -202,12 +175,7 @@ public class ClientTest {
         Assert.assertEquals(clientTest.getId(), oraculo.get(0).getId());
         Assert.assertEquals(clientTest.getName(), oraculo.get(0).getName());
     }
-
-    /**
-     * Prueba para consultar la lista de Clients
-     *
-     * @generated
-     */
+ 
     @Test
     public void listClientTest() throws IOException {
         Response response = target
@@ -219,11 +187,7 @@ public class ClientTest {
         Assert.assertEquals(oraculo.size(), listClientTest.size());
     }
 
-    /**
-     * Prueba para actualizar un Client
-     *
-     * @generated
-     */
+     
     @Test
     public void updateClientTest() throws IOException {
         ClientDetailDTO client = new ClientDetailDTO(oraculo.get(0));
@@ -243,11 +207,7 @@ public class ClientTest {
         Assert.assertEquals(client.getName(), clientTest.getName());
     }
 
-    /**
-     * Prueba para eliminar un Client
-     *
-     * @generated
-     */
+     
     @Test
     public void deleteClientTest() {
         ClientDetailDTO client = new ClientDetailDTO(oraculo.get(0));
@@ -258,3 +218,4 @@ public class ClientTest {
         Assert.assertEquals(OkWithoutContent, response.getStatus());
     }
 }
+*/

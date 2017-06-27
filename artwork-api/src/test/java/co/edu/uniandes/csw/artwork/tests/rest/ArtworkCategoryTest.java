@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.rest;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.UserDTO;
 
 import co.edu.uniandes.csw.artwork.entities.ArtworkEntity;
@@ -62,9 +62,7 @@ import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-/*
- * Testing URI: artists/{artworksId: \\d+}/artworks/
- */
+ 
 @RunWith(Arquillian.class)
 public class ArtworkCategoryTest {
 
@@ -129,11 +127,7 @@ public class ArtworkCategoryTest {
         oraculo.clear();
     }
 
-   /**
-     * Datos iniciales para el correcto funcionamiento de las pruebas.
-     *
-     * @generated
-     */
+    
     private void insertData() {
             fatherArtistEntity = factory.manufacturePojo(ArtistEntity.class);
             em.persist(fatherArtistEntity);
@@ -151,11 +145,7 @@ public class ArtworkCategoryTest {
             }
     }
 
-    /**
-     * Configuración inicial de la prueba.
-     *
-     * @generated
-     */
+    
     @Before
     public void setUpTest() {
         try {
@@ -179,19 +169,7 @@ public class ArtworkCategoryTest {
                 .path(categoryPath);
     }
 
-    /**
-     * Login para poder consultar los diferentes servicios
-     *
-     * @param username Nombre de usuario
-     * @param password Clave del usuario
-     * @return Cookie con información de la sesión del usuario
-     * @generated
-     */
-    /**
-     *Prueba para asociar un Category existente a un Artwork
-     *
-     * @generated
-     */
+    
     @Test
     public void addCategoryTest() {
         CategoryDetailDTO category = new CategoryDetailDTO(oraculo.get(2));
@@ -205,11 +183,7 @@ public class ArtworkCategoryTest {
         Assert.assertEquals(category.getId(), categoryTest.getId());
     }
 
-    /**
-     * Prueba para obtener una colección de instancias de Category asociadas a una instancia Artwork
-     *
-     * @generated
-     */
+   
     @Test
     public void listCategoryTest() throws IOException {
 
@@ -222,11 +196,7 @@ public class ArtworkCategoryTest {
         Assert.assertEquals(2, categoryListTest.size());
     }
 
-    /**
-     * Prueba para obtener una instancia de Category asociada a una instancia Artwork
-     *
-     * @generated
-     */
+   
     @Test
     public void getCategoryTest() throws IOException {
         CategoryDetailDTO category = new CategoryDetailDTO(oraculo.get(0));
@@ -238,11 +208,7 @@ public class ArtworkCategoryTest {
         Assert.assertEquals(category.getName(), categoryTest.getName());
     }
 
-    /**
-     * Prueba para desasociar un Category existente de un Artwork existente
-     *
-     * @generated
-     */
+    
     @Test
     public void removeCategoryTest() {
 
@@ -252,4 +218,6 @@ public class ArtworkCategoryTest {
                 .request().delete();
         Assert.assertEquals(OkWithoutContent, response.getStatus());
     }
+   
 }
+*/

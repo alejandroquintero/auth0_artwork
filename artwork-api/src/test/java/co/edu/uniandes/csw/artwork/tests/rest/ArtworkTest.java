@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.rest;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.UserDTO;
 import co.edu.uniandes.csw.artwork.entities.ArtworkEntity;
 import co.edu.uniandes.csw.artwork.entities.ArtistEntity;
@@ -61,9 +61,7 @@ import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-/*
- * Testing URI: artists/{artworksId: \\d+}/artworks/
- */
+ 
 @RunWith(Arquillian.class)
 public class ArtworkTest {
 
@@ -123,11 +121,7 @@ public class ArtworkTest {
         oraculo.clear();
     }
 
-   /**
-     * Datos iniciales para el correcto funcionamiento de las pruebas.
-     *
-     * @generated
-     */
+  
     public void insertData() {
         fatherArtistEntity = factory.manufacturePojo(ArtistEntity.class);
         fatherArtistEntity.setId(1L);
@@ -142,11 +136,7 @@ public class ArtworkTest {
         }
     }
 
-    /**
-     * Configuración inicial de la prueba.
-     *
-     * @generated
-     */
+    
     @Before
     public void setUpTest() {
         try {
@@ -168,19 +158,7 @@ public class ArtworkTest {
                 .path(artworkPath);
     }
 
-    /**
-     * Login para poder consultar los diferentes servicios
-     *
-     * @param username Nombre de usuario
-     * @param password Clave del usuario
-     * @return Cookie con información de la sesión del usuario
-     * @generated
-     */
-    /**
-     * Prueba para crear un Artwork
-     *
-     * @generated
-     */
+   
     @Test
     public void createArtworkTest() throws IOException {
         ArtworkDetailDTO artwork = factory.manufacturePojo(ArtworkDetailDTO.class);
@@ -200,11 +178,7 @@ public class ArtworkTest {
         Assert.assertNotNull(entity);
     }
 
-    /**
-     * Prueba para consultar un Artwork
-     *
-     * @generated
-     */
+    
     @Test
     public void getArtworkByIdTest() {
 
@@ -217,12 +191,7 @@ public class ArtworkTest {
         Assert.assertEquals(artworkTest.getImage(), oraculo.get(0).getImage());
         Assert.assertEquals(artworkTest.getPrice(), oraculo.get(0).getPrice());
     }
-
-    /**
-     * Prueba para consultar la lista de Artworks
-     *
-     * @generated
-     */
+ 
     @Test
     public void listArtworkTest() throws IOException {
         Response response = target
@@ -234,11 +203,7 @@ public class ArtworkTest {
         Assert.assertEquals(oraculo.size(), listArtworkTest.size());
     }
 
-    /**
-     * Prueba para actualizar un Artwork
-     *
-     * @generated
-     */
+    
     @Test
     public void updateArtworkTest() throws IOException {
         ArtworkDetailDTO artwork = new ArtworkDetailDTO(oraculo.get(0));
@@ -262,11 +227,7 @@ public class ArtworkTest {
         Assert.assertEquals(artwork.getPrice(), artworkTest.getPrice());
     }
 
-    /**
-     * Prueba para eliminar un Artwork
-     *
-     * @generated
-     */
+   
     @Test
     public void deleteArtworkTest() {
         ArtworkDetailDTO artwork = new ArtworkDetailDTO(oraculo.get(0));
@@ -277,3 +238,4 @@ public class ArtworkTest {
         Assert.assertEquals(OkWithoutContent, response.getStatus());
     }
 }
+*/

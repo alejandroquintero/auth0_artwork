@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package co.edu.uniandes.csw.artwork.tests.rest;
-
+/*
 import co.edu.uniandes.csw.artwork.dtos.minimum.UserDTO;
 import co.edu.uniandes.csw.artwork.entities.ProductEntity;
 import co.edu.uniandes.csw.artwork.dtos.detail.ProductDetailDTO;
@@ -59,10 +59,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
-
-/*
- * Testing URI: products/
- */
+ 
 @RunWith(Arquillian.class)
 public class ProductTest {
 
@@ -118,12 +115,7 @@ public class ProductTest {
         em.createQuery("delete from ProductEntity").executeUpdate();
         oraculo.clear();
     }
-
-   /**
-     * Datos iniciales para el correcto funcionamiento de las pruebas.
-     *
-     * @generated
-     */
+ 
     public void insertData() {
         for (int i = 0; i < 3; i++) {            
             ProductEntity product = factory.manufacturePojo(ProductEntity.class);
@@ -133,11 +125,7 @@ public class ProductTest {
         }
     }
 
-    /**
-     * Configuración inicial de la prueba.
-     *
-     * @generated
-     */
+     
     @Before
     public void setUpTest() {
         try {
@@ -157,19 +145,7 @@ public class ProductTest {
                 .path(productPath);
     }
 
-    /**
-     * Login para poder consultar los diferentes servicios
-     *
-     * @param username Nombre de usuario
-     * @param password Clave del usuario
-     * @return Cookie con información de la sesión del usuario
-     * @generated
-     */
-    /**
-     * Prueba para crear un Product
-     *
-     * @generated
-     */
+    
     @Test
     public void createProductTest() throws IOException {
         ProductDetailDTO product = factory.manufacturePojo(ProductDetailDTO.class);
@@ -188,11 +164,7 @@ public class ProductTest {
         Assert.assertNotNull(entity);
     }
 
-    /**
-     * Prueba para consultar un Product
-     *
-     * @generated
-     */
+    
     @Test
     public void getProductByIdTest() {
 
@@ -205,11 +177,7 @@ public class ProductTest {
         Assert.assertEquals(productTest.getPrice(), oraculo.get(0).getPrice());
     }
 
-    /**
-     * Prueba para consultar la lista de Products
-     *
-     * @generated
-     */
+     
     @Test
     public void listProductTest() throws IOException {
         Response response = target
@@ -221,11 +189,7 @@ public class ProductTest {
         Assert.assertEquals(oraculo.size(), listProductTest.size());
     }
 
-    /**
-     * Prueba para actualizar un Product
-     *
-     * @generated
-     */
+     
     @Test
     public void updateProductTest() throws IOException {
         ProductDetailDTO product = new ProductDetailDTO(oraculo.get(0));
@@ -247,11 +211,7 @@ public class ProductTest {
         Assert.assertEquals(product.getPrice(), productTest.getPrice());
     }
 
-    /**
-     * Prueba para eliminar un Product
-     *
-     * @generated
-     */
+    
     @Test
     public void deleteProductTest() {
         ProductDetailDTO product = new ProductDetailDTO(oraculo.get(0));
@@ -262,3 +222,4 @@ public class ProductTest {
         Assert.assertEquals(OkWithoutContent, response.getStatus());
     }
 }
+*/
