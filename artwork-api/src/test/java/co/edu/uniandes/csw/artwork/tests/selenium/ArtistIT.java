@@ -105,6 +105,7 @@ public class ArtistIT {
 
     @Before
     public void setup() {
+        
         browser.manage().window().maximize();
         browser.get(deploymentURL.toExternalForm());
     }
