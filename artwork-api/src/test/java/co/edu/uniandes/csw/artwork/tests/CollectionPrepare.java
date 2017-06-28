@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.artwork.tests.postman;
+package co.edu.uniandes.csw.artwork.tests;
 
 import co.edu.uniandes.csw.artwork.dtos.detail.ArtistDetailDTO;
 import co.edu.uniandes.csw.auth.conexions.AuthenticationApi;

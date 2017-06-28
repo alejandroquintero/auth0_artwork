@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.artwork.tests.postman;
 
+import co.edu.uniandes.csw.artwork.tests.CollectionPrepare;
 import co.edu.uniandes.csw.artwork.dtos.detail.ArtistDetailDTO;
 import co.edu.uniandes.csw.artwork.entities.ArtistEntity;
 import co.edu.uniandes.csw.artwork.resources.ArtistResource;
