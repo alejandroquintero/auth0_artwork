@@ -24,9 +24,6 @@
                 <goal>clean</goal>
                 <goal>install</goal>
             </goals>
-            <properties>
-                <skipTests>true</skipTests>
-            </properties>
         </action>
         <action>
             <actionName>build</actionName>
@@ -36,8 +33,5 @@
             <goals>
                 <goal>install</goal>
             </goals>
-            <properties>
-                <skipTests>true</skipTests>
-            </properties>
         </action>
     </actions>

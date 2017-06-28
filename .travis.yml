@@ -1,7 +1,9 @@
+env:
+  global:
+  - AUTH0_PROPERTIES=$TRAVIS_BUILD_DIR/artwork-api/src/main/java/co/edu/uniandes/csw/auth/properties/auth0.properties
 language: java
 jdk:
   - oraclejdk8
-env:
-  - AUTH0_PROPERTIES=$TRAVIS_BUILD_DIR/artwork-api/src/main/java/co/edu/uniandes/csw/auth/properties/auth0.properties
 after_success:
   - mvn sonar:sonar
+sudo: required
