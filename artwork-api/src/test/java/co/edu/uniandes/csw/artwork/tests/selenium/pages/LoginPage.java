@@ -27,8 +27,17 @@ package co.edu.uniandes.csw.artwork.tests.selenium.pages;
 import co.edu.uniandes.csw.artwork.tests.Utils;
 import co.edu.uniandes.csw.auth.conexions.AuthenticationApi;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.core.Context;
 import static org.jboss.arquillian.graphene.Graphene.guardAjax;
 import static org.jboss.arquillian.graphene.Graphene.waitModel;
 import org.jboss.arquillian.graphene.page.Location;
@@ -39,7 +48,7 @@ import org.openqa.selenium.support.FindBy;
 @Location("#/login")
 public class LoginPage {
     
-    private static   AuthenticationApi auth;
+    
 
     @FindBy(id = "username-input")
     private WebElement usernameInput;
@@ -49,19 +58,40 @@ public class LoginPage {
 
     @FindBy(id = "log-in-btn")
     private WebElement registerBtn;
+    
+    private static  Properties prop;
+    private static InputStream input = null;
+    private static final String path = System.getenv("AUTH0_PROPERTIES");
+   
 
+       
+        static {
+            prop = new Properties();
+        try {
+            input =  new FileInputStream(path);
+            prop.load(input);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+    }
+    
     public void login() throws IOException, UnirestException, JSONException, InterruptedException, ExecutionException {
-        auth = new AuthenticationApi();
-        login(auth.getProp().getProperty("username").trim(), auth.getProp().getProperty("password").trim());
+        
+      login(prop.getProperty("username").trim(), prop.getProperty("password").trim());
     }
 
     public void login(String username, String password) {
+        
         waitModel().until().element(usernameInput).is().visible();
         usernameInput.clear();
         passwordInput.clear();
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         guardAjax(registerBtn).click();
+        
     }
 }
 

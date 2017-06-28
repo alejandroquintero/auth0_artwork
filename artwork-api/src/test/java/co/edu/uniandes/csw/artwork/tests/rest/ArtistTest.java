@@ -197,6 +197,7 @@ public class ArtistTest {
     @Test
     public void createArtistTest() throws IOException, UnirestException, JSONException, InterruptedException, ExecutionException {
        String token= login();
+       System.out.println(token);
         ArtistDetailDTO artist = factory.manufacturePojo(ArtistDetailDTO.class);
         Response response = target
             .request()
@@ -283,7 +284,7 @@ public class ArtistTest {
      */
     @Test
     public void deleteArtistTest() throws IOException, UnirestException, JSONException, InterruptedException, ExecutionException {
-        String token= login();
+        String token = login();
         ArtistDTO artist = new ArtistDTO(oraculo.get(0));
         Response response = target
             .path(artist.getId().toString())

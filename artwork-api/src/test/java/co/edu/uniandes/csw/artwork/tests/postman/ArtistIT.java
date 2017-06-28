@@ -51,10 +51,8 @@ import org.json.JSONException;
  */
 @RunWith(Arquillian.class)
 public class ArtistIT {
-   String path= this.getClass().getProtectionDomain()
-             .getCodeSource().getLocation().toString()
-             .split("target")[0].substring(6)
-             .concat("run.bat");
+   String path= System.getProperty("user.dir").concat("\\run.bat");
+   
    PodamFactory factory = new PodamFactoryImpl();
    JSONParser parser = new JSONParser();
    Gson gson = new Gson();
