@@ -42,10 +42,10 @@
                 <version>2.6.1</version>
             </dependency>
             <dependency>
-          <groupId>com.auth0</groupId>
-          <artifactId>mvc-auth-commons</artifactId>
-          <version>1.0.0</version>
-         </dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>mvc-auth-commons</artifactId>
+                <version>1.0.0</version>
+            </dependency>
          
         </dependencies>
     </dependencyManagement>
@@ -78,15 +78,16 @@
             <artifactId>podam</artifactId>
             <version>6.0.2.RELEASE</version>
         </dependency>
-		<dependency>
-              <groupId>org.jboss.shrinkwrap.resolver</groupId>
-              <artifactId>shrinkwrap-resolver-depchain</artifactId>
-              <scope>test</scope>
-              <type>pom</type>
-         </dependency>
+        <dependency>
+            <groupId>org.jboss.shrinkwrap.resolver</groupId>
+            <artifactId>shrinkwrap-resolver-depchain</artifactId>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
+        
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -94,10 +95,10 @@
                 <executions>
                     <execution>
                         <goals>
-                           <goal>prepare-agent</goal>
-                           <goal>prepare-agent-integration</goal>
-                           <goal>report</goal>
-                           <goal>report-integration</goal>
+                            <goal>prepare-agent</goal>
+                            <goal>prepare-agent-integration</goal>
+                            <goal>report</goal>
+                            <goal>report-integration</goal>
                         </goals>
                     </execution>
                 </executions>
