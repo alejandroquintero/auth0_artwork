@@ -155,7 +155,26 @@
                     </execution>
                 </executions>
             </plugin>
-            
+             <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.2</version>
+                <executions>
+                    <execution>
+                        <id>sonar-report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>sonar</goal>
+                            
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>sonar-report</echo>                            
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>  
         </plugins>
     </build>
 </project>
